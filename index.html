@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f47d3c">
+<title>YENMATE | 일본 ATM 사용 안내</title>
+<style>
+:root{--orange:#f47d3c;--orange2:#ff9a61;--ink:#171717;--muted:#777;--line:#ececec;--bg:#faf9f7;--green:#16864b;--purple:#a51d83;--blue:#2876bd;--shadow:0 12px 35px rgba(25,20,15,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.55}button{font:inherit;cursor:pointer;border:0}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{height:76px;background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{font-size:27px;font-weight:900;letter-spacing:-1.5px;color:var(--orange)}.brand span{color:var(--ink)}.navlinks{display:flex;gap:28px;font-size:14px;font-weight:650}.navlinks a:hover{color:var(--orange)}.menu-btn{display:none;background:#fff;font-size:22px}
+main{min-height:75vh}.hero{padding:76px 0 62px;display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--orange);font-size:12px;font-weight:800;letter-spacing:1.8px}.dot{width:7px;height:7px;border-radius:50%;background:var(--orange)}h1{font-size:clamp(42px,6vw,68px);line-height:1.13;letter-spacing:-3px;margin:18px 0}.hero h1 em{font-style:normal;color:var(--orange)}.lead{color:#686868;font-size:17px;max-width:470px}.actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.btn{padding:14px 22px;border-radius:13px;font-weight:750;transition:.2s}.primary{background:var(--orange);color:white;box-shadow:0 8px 18px #f47d3c35}.primary:hover{background:#e86c2d;transform:translateY(-2px)}.secondary{background:white;border:1px solid #e5e2de}.secondary:hover{border-color:var(--orange);color:var(--orange)}.hero-art{background:#fff0e6;border-radius:30px;padding:28px;min-height:330px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.hero-art:before,.hero-art:after{content:"";position:absolute;border-radius:50%;background:#ffd6bd;opacity:.7}.hero-art:before{width:240px;height:240px;right:-50px;top:-70px}.hero-art:after{width:160px;height:160px;left:-50px;bottom:-60px}.phone{position:relative;z-index:1;width:205px;background:#fff;border:8px solid #242424;border-radius:30px;padding:16px 13px;box-shadow:0 20px 40px #6a341c22;transform:rotate(-5deg)}.phone-top{height:5px;width:55px;border-radius:10px;background:#222;margin:0 auto 15px}.phone-logo{font-size:13px;font-weight:900;color:var(--orange);text-align:center}.phone-title{font-size:16px;font-weight:850;text-align:center;margin:15px 0 5px}.phone-sub{font-size:9px;color:#777;text-align:center}.phone-screen{margin-top:15px;background:#fff8f3;border-radius:14px;padding:12px}.phone-bank{display:flex;align-items:center;gap:8px;background:white;border:1px solid #eee;border-radius:9px;padding:9px;margin:6px 0;font-size:10px;font-weight:750}.bankmark{width:24px;height:24px;border-radius:7px;background:var(--green);color:white;display:grid;place-items:center;font-size:11px}.bankmark.a{background:var(--purple)}.bankmark.l{background:var(--blue)}.phone-progress{height:5px;background:#eee;border-radius:9px;margin-top:12px;overflow:hidden}.phone-progress i{display:block;width:50%;height:100%;background:var(--orange)}
+.section{padding:45px 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:22px}.section-head h2{font-size:29px;letter-spacing:-1px;margin:5px 0}.section-head p{margin:0;color:var(--muted);font-size:14px}.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.quick-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;text-align:left;box-shadow:var(--shadow);transition:.2s}.quick-card:hover{transform:translateY(-4px);border-color:#ffc39f}.quick-icon{width:48px;height:48px;background:#fff0e6;border-radius:15px;display:grid;place-items:center;font-size:23px}.quick-card h3{margin:15px 0 5px;font-size:19px}.quick-card p{margin:0;color:var(--muted);font-size:14px}.arrow{float:right;color:var(--orange);font-size:22px}
+.bank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.bank-card{background:white;border:1px solid var(--line);border-radius:20px;padding:22px;text-align:left;transition:.2s}.bank-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.bank-logo{height:54px;width:54px;border-radius:16px;display:grid;place-items:center;color:white;font-weight:900;font-size:20px;margin-bottom:18px}.seven{background:#16864b}.aeon{background:#a51d83}.lawson{background:#2876bd}.bank-card h3{margin:0 0 3px;font-size:18px}.bank-card p{margin:0;color:var(--muted);font-size:13px}.bank-card .small-link{display:inline-block;margin-top:17px;color:var(--orange);font-weight:800;font-size:13px}
+.notice{background:#fff7f1;border:1px solid #ffe2d1;border-radius:16px;padding:17px 20px;color:#76503b;font-size:13px;margin-top:22px}.notice strong{color:#c65d25}
+.page{padding:38px 0 70px}.back{background:none;color:#777;padding:5px 0;margin-bottom:20px;font-weight:700}.page-title{font-size:34px;letter-spacing:-1.5px;margin:0 0 8px}.page-desc{color:var(--muted);margin:0 0 28px}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:var(--shadow)}.guide-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.guide-visual{background:#f4f6f7;border-radius:17px;padding:18px;min-height:280px;display:flex;flex-direction:column;justify-content:center}.atm-machine{width:min(260px,100%);margin:auto;background:#d6d9dc;border:8px solid #b7bdc2;border-radius:18px;padding:14px;box-shadow:inset 0 0 0 2px #fff}.atm-brand{font-size:11px;font-weight:900;margin-bottom:10px;color:#555}.atm-screen{background:#e8f4f8;border:5px solid #aab9c0;border-radius:7px;padding:15px 10px;min-height:150px;text-align:center}.atm-screen .jp{font-size:12px;font-weight:800;margin:5px 0 12px}.atm-options{display:grid;grid-template-columns:1fr 1fr;gap:7px}.atm-option{background:white;border:2px solid #c5d6df;border-radius:6px;padding:9px 4px;font-size:10px;font-weight:800}.atm-option.active{border:3px solid var(--orange);background:#fff0e6;color:#b94d16}.atm-slot{width:75px;height:8px;border-radius:6px;background:#555;margin:15px auto 0}.visual-caption{text-align:center;color:#777;font-size:11px;margin:12px 0 0}.step-count{color:var(--orange);font-weight:850;font-size:13px}.progress{height:7px;background:#eee;border-radius:10px;overflow:hidden;margin:10px 0 22px}.progress span{height:100%;display:block;background:var(--orange);transition:width .25s}.guide-copy h2{font-size:25px;letter-spacing:-.8px;margin:8px 0}.guide-copy p{color:#666}.tip{background:#fff7f1;border-radius:13px;padding:14px;color:#754a31;font-size:13px;margin:18px 0}.guide-controls{display:flex;gap:10px;margin-top:22px}.guide-controls button{flex:1}.subtle{font-size:12px;color:#999;margin-top:14px}
+.choice-list{display:grid;gap:11px}.choice{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px;text-align:left;display:flex;align-items:center;gap:13px}.choice:hover{border-color:var(--orange);background:#fffaf7}.choice .symbol{width:38px;height:38px;border-radius:12px;background:#fff0e6;display:grid;place-items:center;font-size:18px}.choice strong{display:block}.choice small{color:var(--muted)}.result{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:18px}.result h3{margin:0 0 10px}.result ol{padding-left:20px;color:#555}.result li{margin:8px 0}.tag{display:inline-block;background:#fff0e6;color:#c65d25;border-radius:20px;padding:5px 10px;font-size:11px;font-weight:800}
+footer{border-top:1px solid var(--line);padding:28px 0;color:#888;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.hidden{display:none!important}
+@media(max-width:760px){.wrap{width:min(100% - 30px,560px)}header{height:65px}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;background:white;padding:20px;flex-direction:column;gap:16px;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.menu-btn{display:block}.hero{padding:48px 0 30px;grid-template-columns:1fr;gap:30px}.hero-art{min-height:280px}.phone{width:185px}.hero h1{letter-spacing:-2px}.lead{font-size:15px}.section{padding:30px 0}.section-head h2{font-size:24px}.quick-grid{grid-template-columns:1fr}.bank-grid{grid-template-columns:1fr}.bank-card{display:flex;align-items:center;gap:15px;padding:17px}.bank-logo{margin:0;flex:none}.bank-card .small-link{margin:0 0 0 auto}.guide-layout{grid-template-columns:1fr}.guide-visual{min-height:240px}.page-title{font-size:28px}.panel{padding:18px}.guide-copy h2{font-size:22px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#" onclick="goHome();return false">YEN<span>MATE</span></a>
+  <nav class="navlinks" id="navlinks"><a href="#" onclick="goHome();return false">홈</a><a href="#" onclick="showBanks();return false">ATM 이용 안내</a><a href="#" onclick="showTrouble();return false">문제 해결</a><a href="#" onclick="showInfo();return false">이용 정보</a></nav>
+  <button class="menu-btn" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="메뉴">☰</button>
+</div></header>
+<main>
+<section id="home">
+  <div class="wrap hero">
+    <div><div class="eyebrow"><i class="dot"></i> JAPAN ATM GUIDE SERVICE</div>
+      <h1>일본 ATM,<br><em>두려울 게 없어!</em></h1>
+      <p class="lead">낯선 일본어 화면도, 복잡한 출금 과정도 걱정하지 마세요. YENMATE가 한국어로 한 단계씩 안내해 드릴게요.</p>
+      <div class="actions"><button class="btn primary" onclick="showBanks()">ATM 사용법 보기 →</button><button class="btn secondary" onclick="showTrouble()">출금 문제 해결하기</button></div>
+    </div>
+    <div class="hero-art"><div class="phone"><div class="phone-top"></div><div class="phone-logo">YENMATE</div><div class="phone-title">어떤 ATM을<br>이용하나요?</div><div class="phone-sub">은행을 선택하고 안내를 시작하세요</div><div class="phone-screen"><div class="phone-bank"><span class="bankmark">7</span> 세븐뱅크</div><div class="phone-bank"><span class="bankmark a">A</span> 이온뱅크</div><div class="phone-bank"><span class="bankmark l">L</span> 로손 ATM</div><div class="phone-progress"><i></i></div></div></div></div>
+  </div>
+  <div class="wrap section"><div class="section-head"><div><div class="eyebrow">START HERE</div><h2>무엇을 도와드릴까요?</h2><p>지금 필요한 서비스를 선택해 보세요.</p></div></div>
+    <div class="quick-grid">
+      <button class="quick-card" onclick="showBanks()"><span class="arrow">↗</span><div class="quick-icon">🏧</div><h3>ATM 사용법 안내</h3><p>은행별 출금 절차를 사진과 설명으로 확인해요.</p></button>
+      <button class="quick-card" onclick="showTrouble()"><span class="arrow">↗</span><div class="quick-icon">🛠️</div><h3>상황별 문제 해결</h3><p>검색어를 몰라도 현재 상황을 선택하면 돼요.</p></button>
+    </div>
+  </div>
+  <div class="wrap section"><div class="section-head"><div><div class="eyebrow">ATM GUIDE</div><h2>지원 ATM</h2><p>이용하려는 ATM을 선택해 안내를 시작하세요.</p></div><button class="btn secondary" onclick="showBanks()">전체 보기</button></div><div class="bank-grid" id="homeBanks"></div>
+    <div class="notice"><strong>이용 전 확인하세요.</strong> ATM 화면과 출금 절차는 기기·카드 종류에 따라 달라질 수 있습니다. 화면의 안내와 카드 발급사의 안내를 함께 확인해 주세요.</div>
+  </div>
+</section>
+<section id="banks" class="hidden"><div class="wrap page"><button class="back" onclick="goHome()">← 홈으로</button><div class="eyebrow">SELECT ATM</div><h1 class="page-title">어떤 ATM을 이용하나요?</h1><p class="page-desc">이용하려는 은행을 선택하면 단계별 안내가 시작됩니다.</p><div class="bank-grid" id="bankList"></div><div class="notice"><strong>참고:</strong> 실제 ATM 화면은 설치 장소와 기기 버전에 따라 다를 수 있습니다.</div></div></section>
+<section id="guide" class="hidden"><div class="wrap page"><button class="back" onclick="showBanks()">← ATM 선택으로</button><div class="eyebrow">STEP-BY-STEP GUIDE</div><h1 class="page-title" id="guideTitle">ATM 출금 안내</h1><p class="page-desc" id="guideDesc">화면을 보면서 차근차근 따라 해보세요.</p>
+  <div class="panel"><div class="guide-layout"><div class="guide-visual"><div class="atm-machine"><div class="atm-brand" id="atmBrand">ATM</div><div class="atm-screen"><div class="jp" id="atmJapanese">お取引を選択してください</div><div class="atm-options" id="atmOptions"></div></div><div class="atm-slot"></div></div><div class="visual-caption">ATM 화면 예시 · 실제 기기 화면과 다를 수 있습니다.</div></div>
+  <div class="guide-copy"><div class="step-count" id="stepCount">STEP 1 / 6</div><div class="progress"><span id="progressBar" style="width:16.66%"></span></div><h2 id="stepHeading"></h2><p id="stepDescription"></p><div class="tip" id="stepTip"></div><div class="guide-controls"><button class="btn secondary" id="prevBtn" onclick="moveStep(-1)">이전</button><button class="btn primary" id="nextBtn" onclick="moveStep(1)">다음 단계 →</button></div><div class="subtle">※ 안내 내용은 일반적인 이용 흐름을 설명하는 프로토타입입니다. 실제 화면의 지시를 우선해 주세요.</div></div></div></div>
+</div></section>
+<section id="trouble" class="hidden"><div class="wrap page"><button class="back" onclick="goHome()">← 홈으로</button><div class="eyebrow">TROUBLESHOOTING</div><h1 class="page-title">지금 어떤 상황인가요?</h1><p class="page-desc">문제 상황을 선택하면 확인할 사항과 다음 행동을 안내해 드려요.</p><div class="panel"><div class="choice-list" id="problemChoices"></div><div id="problemResult"></div></div></div></section>
+<section id="info" class="hidden"><div class="wrap page"><button class="back" onclick="goHome()">← 홈으로</button><div class="eyebrow">USEFUL INFORMATION</div><h1 class="page-title">ATM 이용 전 알아두기</h1><p class="page-desc">일본에서 해외 발급 카드로 현금을 인출할 때 확인할 사항입니다.</p><div class="choice-list">
+  <div class="choice"><span class="symbol">💳</span><div><strong>해외 발급 카드 지원 여부</strong><small>ATM에 국제 브랜드 카드 로고가 있는지, 카드 발급사가 해당 ATM을 지원하는지 확인하세요.</small></div></div>
+  <div class="choice"><span class="symbol">🔢</span><div><strong>비밀번호 입력</strong><small>일부 ATM에서 6자리 입력을 요구할 수 있습니다. 카드사 안내에 따라 입력하고 임의로 숫자를 덧붙이기 전에 발급사에 확인하세요.</small></div></div>
+  <div class="choice"><span class="symbol">💱</span><div><strong>환전 및 통화 선택</strong><small>환전·결제 통화 선택 화면이 나타나면 표시된 환율과 수수료를 확인한 뒤 선택하세요.</small></div></div>
+  <div class="choice"><span class="symbol">🧾</span><div><strong>출금 후 확인</strong><small>현금, 카드, 영수증을 모두 챙기고 계좌 내역에서 출금 금액을 확인하세요.</small></div></div>
+</div><div class="notice"><strong>주의:</strong> YENMATE는 안내용 서비스입니다. 비밀번호 규칙, 수수료, 출금 가능 여부는 카드 발급사와 ATM 운영사의 최신 공식 안내를 확인하세요.</div></div></section>
+</main>
+<footer><div class="wrap footer-inner"><div><strong style="color:var(--orange);font-size:17px">YENMATE</strong><br>일본 ATM 사용 안내 서비스</div><div>본 사이트는 교육·프로토타입 목적의 안내 서비스이며 금융기관의 공식 서비스가 아닙니다.</div></div></footer>
+<script>
+const banks=[
+ {id:"seven",name:"세븐뱅크",sub:"SEVEN BANK",mark:"7",cls:"seven",steps:[
+  ["お取引を選択してください",["お引出し","お預入れ","残高照会","その他"],"출금 메뉴를 선택하세요.","화면에서 「お引出し」(출금)를 찾아 선택합니다.","출금(お引出し) 메뉴가 보이지 않으면 화면의 언어·거래 안내를 확인하세요.","출금 시작"],
+  ["口座を選択してください",["クレジットカード","普通預金","当座預金","スキップ"],"계좌 유형을 확인하세요.","기획안에서 안내한 예시 화면에서는 「普通預金」(보통예금) 또는 「スキップ」(건너뛰기)를 선택합니다.","실제 선택지는 카드와 ATM 화면에 따라 다를 수 있습니다.","계좌 유형 선택"],
+  ["暗証番号を入力してください",["暗証番号","確認"],"카드 비밀번호를 입력하세요.","카드 발급사에서 안내한 비밀번호를 입력합니다.","4자리 비밀번호 뒤에 00을 붙이는 방식이 모든 카드에 적용되는 것은 아닙니다. 카드사 안내를 먼저 확인하세요.","비밀번호 입력"],
+  ["金額を入力してください",["10,000円","20,000円","その他"],"출금할 금액을 입력하세요.","필요한 금액을 선택하거나 직접 입력한 뒤 확인합니다.","1회·1일 출금 한도와 ATM 이용 한도를 확인하세요.","금액 입력"],
+  ["通貨・換算方法を選択",["換算して進む","換算せずに進む"],"환전 및 통화 선택을 확인하세요.","기획안의 세븐뱅크 사례에서는 「換算せずに進む」(지금 환전하지 않고 진행) 선택을 안내합니다.","화면에 표시되는 환율·수수료를 반드시 확인한 뒤 선택하세요.","통화 선택"],
+  ["お引出しが完了しました",["カードをお取りください","現金をお取りください"],"출금이 완료되었습니다.","현금과 카드를 챙기고 영수증을 확인하세요.","현금·카드가 반환되었는지 확인하고 거래 내역을 확인하세요.","출금 완료"]
+ ]},
+ {id:"aeon",name:"이온뱅크",sub:"AEON BANK",mark:"A",cls:"aeon",steps:[
+  ["お取引を選択してください",["お引出し","お預入れ","International Cards"],"국제카드 메뉴를 찾으세요.","기획안의 사례에서는 언어 변경 전 좌측 하단의 「International Cards」를 선택합니다.","일반 거래 메뉴가 아니라 해외 발급 카드용 메뉴인지 확인하세요.","International Cards 선택"],
+  ["口座を選択してください",["普通預金","信用貸口座","当座預金"],"보통예금 계좌를 선택하세요.","기획안의 안내에 따라 「普通預金」(보통예금 계좌)을 선택합니다.","실제 화면에 표시되는 항목을 확인하세요.","계좌 선택"],
+  ["暗証番号を入力してください",["暗証番号","確認"],"카드 비밀번호를 입력하세요.","카드 발급사가 안내한 비밀번호를 입력합니다.","비밀번호 입력 자릿수는 카드 발급사에 확인하세요.","비밀번호 입력"],
+  ["金額を入力してください",["10,000円","20,000円","その他"],"출금 금액을 입력하세요.","원하는 금액을 입력하고 확인합니다.","ATM과 카드의 출금 한도를 확인하세요.","금액 입력"],
+  ["内容をご確認ください",["確認","取消"],"거래 내용을 확인하세요.","금액과 수수료·환율 정보를 확인한 뒤 진행합니다.","확인 전 화면에 표시된 금액을 다시 살펴보세요.","거래 확인"],
+  ["お引出しが完了しました",["カード","現金","明細票"],"현금과 카드를 챙기세요.","카드와 현금, 필요한 경우 이용 명세표를 챙깁니다.","거래 내역에서 출금 여부를 확인하세요.","출금 완료"]
+ ]},
+ {id:"lawson",name:"로손 ATM",sub:"LAWSON BANK",mark:"L",cls:"lawson",steps:[
+  ["いらっしゃいませ",["取引開始","English Guidance"],"거래 시작 버튼을 선택하세요.","기획안의 사례에서는 첫 화면의 초록색 「取引開始」 버튼을 선택합니다.","기기 화면에 따라 언어 안내 버튼의 위치가 다를 수 있습니다.","거래 시작"],
+  ["お取引を選択してください",["お引出し","お預入れ","その他"],"출금을 선택하세요.","「お引出し」(출금) 메뉴를 선택합니다.","해외 발급 카드 이용이 가능한 ATM인지 카드 로고를 확인하세요.","출금 선택"],
+  ["口座を選択してください",["信用カード","普通預金","当座預金"],"보통예금 계좌를 선택하세요.","기획안의 사례에서는 「普通預金」(보통예금 계좌)을 선택합니다.","화면에 표시되는 계좌 종류를 확인하세요.","계좌 선택"],
+  ["暗証番号を入力してください",["暗証番号","確認"],"카드 비밀번호를 입력하세요.","카드 발급사 안내에 따라 비밀번호를 입력합니다.","비밀번호 오류가 반복되면 추가 입력을 중단하고 카드사에 문의하세요.","비밀번호 입력"],
+  ["金額を入力してください",["10,000円","20,000円","その他"],"출금 금액을 입력하세요.","필요한 금액을 선택하고 확인합니다.","출금 한도와 수수료를 확인하세요.","금액 입력"],
+  ["お引出しが完了しました",["カードをお取りください","現金をお取りください"],"출금이 완료되었습니다.","현금과 카드를 챙기고 거래 내역을 확인합니다.","카드와 현금을 ATM에 두고 오지 않았는지 확인하세요.","출금 완료"]
+ ]}
+];
+const problems=[
+ {id:"pin",icon:"🔐",title:"비밀번호 오류가 발생했어요",desc:"카드 비밀번호를 입력했는데 출금되지 않아요.",tag:"비밀번호",steps:["입력한 비밀번호가 카드 발급사에 등록된 현금서비스·해외 ATM용 비밀번호인지 확인하세요.","ATM이 요구하는 자릿수와 카드 발급사의 입력 방법을 확인하세요.","오류가 반복되면 추가 입력을 중단하세요. 카드가 잠길 수 있습니다.","카드 뒷면 또는 공식 앱의 고객센터를 통해 카드 발급사에 문의하세요."]},
+ {id:"intl",icon:"💳",title:"국제카드 메뉴를 선택하지 않았어요",desc:"해외 발급 카드 메뉴를 놓친 것 같아요.",tag:"국제카드",steps:["거래를 취소하거나 처음 화면으로 돌아갈 수 있는지 확인하세요.","이온뱅크 사례에서는 언어 변경 전 「International Cards」 메뉴를 선택하도록 안내합니다.","세븐뱅크·로손 등 다른 ATM은 화면 구성이 다를 수 있으므로 해당 ATM 안내를 확인하세요.","카드 브랜드 로고가 표시된 ATM인지 확인한 뒤 다시 시도하세요."]},
+ {id:"fail",icon:"⚠️",title:"출금에 실패했어요",desc:"카드를 넣었지만 현금이 나오지 않아요.",tag:"출금 실패",steps:["ATM 화면의 오류 문구와 영수증이 있다면 내용을 확인하세요.","카드 이용 정지, 해외 ATM 이용 설정, 1회·1일 한도, 잔액을 확인하세요.","계좌에서 금액이 빠져나갔는지 카드사 앱 또는 은행 앱에서 확인하세요.","금액이 출금됐는데 현금이 나오지 않았다면 ATM 운영사와 카드 발급사에 즉시 문의하세요."]},
+ {id:"card",icon:"🪪",title:"카드가 인식되지 않아요",desc:"카드를 넣어도 다시 반환되거나 인식되지 않아요.",tag:"카드 인식",steps:["카드 방향과 삽입 방법을 확인하세요.","ATM이 해당 카드 브랜드(Visa, Mastercard 등)를 지원하는지 확인하세요.","카드가 손상되었거나 이용 정지 상태인지 확인하세요.","다른 지원 ATM에서 시도하거나 카드 발급사에 문의하세요."]}
+];
+function cardMarkup(b){return `<button class="bank-card" onclick="startGuide('${b.id}')"><div class="bank-logo ${b.cls}">${b.mark}</div><div><h3>${b.name}</h3><p>${b.sub}</p></div><span class="small-link">안내 보기 →</span></button>`}
+document.getElementById('homeBanks').innerHTML=banks.map(cardMarkup).join('');
+document.getElementById('bankList').innerHTML=banks.map(cardMarkup).join('');
+let currentBank=null,currentStep=0;
+function hideAll(){['home','banks','guide','trouble','info'].forEach(id=>document.getElementById(id).classList.add('hidden'));document.getElementById('navlinks').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}
+function goHome(){hideAll();document.getElementById('home').classList.remove('hidden')}
+function showBanks(){hideAll();document.getElementById('banks').classList.remove('hidden')}
+function showTrouble(){hideAll();document.getElementById('trouble').classList.remove('hidden')}
+function showInfo(){hideAll();document.getElementById('info').classList.remove('hidden')}
+function startGuide(id){currentBank=banks.find(b=>b.id===id);currentStep=0;hideAll();document.getElementById('guide').classList.remove('hidden');renderStep()}
+function renderStep(){const s=currentBank.steps[currentStep],total=currentBank.steps.length;document.getElementById('guideTitle').textContent=currentBank.name+' 출금 안내';document.getElementById('guideDesc').textContent='ATM 화면을 보면서 한 단계씩 따라 해보세요.';document.getElementById('atmBrand').textContent=currentBank.sub;document.getElementById('atmJapanese').textContent=s[0];document.getElementById('atmOptions').innerHTML=s[1].map((x,i)=>`<div class="atm-option ${i===0?'active':''}">${x}</div>`).join('');document.getElementById('stepCount').textContent=`STEP ${currentStep+1} / ${total}`;document.getElementById('progressBar').style.width=((currentStep+1)/total*100)+'%';document.getElementById('stepHeading').textContent=s[2];document.getElementById('stepDescription').textContent=s[3];document.getElementById('stepTip').textContent='TIP · '+s[4];document.getElementById('prevBtn').disabled=currentStep===0;document.getElementById('prevBtn').style.opacity=currentStep===0?'.45':'1';document.getElementById('nextBtn').textContent=currentStep===total-1?'처음부터 다시 보기':'다음 단계 →'}
+function moveStep(dir){if(dir===1&&currentStep===currentBank.steps.length-1){currentStep=0}else{currentStep=Math.max(0,Math.min(currentBank.steps.length-1,currentStep+dir))}renderStep()}
+document.getElementById('problemChoices').innerHTML=problems.map(p=>`<button class="choice" onclick="showProblem('${p.id}')"><span class="symbol">${p.icon}</span><span><strong>${p.title}</strong><small>${p.desc}</small></span><span style="margin-left:auto;color:var(--orange)">→</span></button>`).join('');
+function showProblem(id){const p=problems.find(x=>x.id===id);document.getElementById('problemResult').innerHTML=`<div class="result"><span class="tag">${p.tag}</span><h3>${p.title}</h3><p style="color:#666;font-size:14px">아래 순서대로 확인해 보세요.</p><ol>${p.steps.map(x=>`<li>${x}</li>`).join('')}</ol><button class="btn secondary" onclick="document.getElementById('problemResult').innerHTML=''">다른 상황 선택하기</button></div>`;document.getElementById('problemResult').scrollIntoView({behavior:'smooth',block:'nearest'})}
+</script>
+</body>
+</html>
